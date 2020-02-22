@@ -74,8 +74,6 @@ function geoFindMe() {
 
     var typeOfProduct = "";
 
-    print()
-
     if (document.getElementById("tampon").checked) {
         typeOfProduct = "Tampon";
     } else if (document.getElementById("pad").checked) {
@@ -90,8 +88,6 @@ function geoFindMe() {
     console.log(location);
     console.log(specialRequest);
     console.log(typeOfProduct);
-
-    document.querySelector('#padRequestButton').addEventListener('click', geoFindMe);
   }
 
   function error() {
