@@ -3,10 +3,12 @@ const app = express();
 const path = require('path');
 
 app.get('/', (req, res) => {
-//   //res.send('Hello from App Engine!');
-//   res.sendFile(path.join(__dirname + '/home.html'));
-//   res.sendFile(path.join(__dirname + '/style.css'));
-  app.use(express.static('public'))
+  //res.send('Hello from App Engine!');
+  res.sendFile(path.join(__dirname + 'public/home.html'));
+});
+
+app.get('/style.css', function(req, res) {
+  res.sendFile(__dirname + "public/style.css");
 });
 
 // Listen to the App Engine-specified port, or 8080 otherwise
