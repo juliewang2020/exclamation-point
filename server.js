@@ -2,6 +2,22 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+const BandwidthMessaging = require('@bandwidth/messaging');
+BandwidthMessaging.Configuration.basicAuthUserName = "pearlhacks6@bandwidth.com";
+BandwidthMessaging.Configuration.basicAuthPassword = "3uWM6xVZqeNCV2Ns";
+const messagingController = BandwidthMessaging.APIController;
+const applicationId = "";
+
+var body = new BandwidthMessaging.MessageRequest({
+    "applicationId" : applicationId ,
+    "to"            : ["+16789517861"],
+    "from"          : "+19193385629",
+    "text"          : "hello"
+});
+
+var response = messagingController.createMessage(msgUserId, body);
+console.log(response);
+
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
