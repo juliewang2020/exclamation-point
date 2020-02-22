@@ -31,6 +31,9 @@
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your first name">
 
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="Your phone number without dashes (Ex. 1234567890)">
+
     <label>Select Your Preferred Product</label>
     <br>
     <input type="radio" id="tampon" name="type" value="tampon">
@@ -68,6 +71,8 @@ function geoFindMe() {
 
     const fname = document.getElementById("fname").value;
 
+    const phone = document.getElementById("phone").value;
+
     const location = document.getElementById("location").value;
 
     const specialRequest = document.getElementById("specRequest").value;
@@ -102,5 +107,10 @@ function geoFindMe() {
   }
 }
 
+function alertBox() {
+    alert("Thank you for submitting your request! You should receive a text soon about period pals in your area!");
+}
+
 document.querySelector('#padRequestButton').addEventListener('click', geoFindMe);
+document.querySelector('#padRequestButton').addEventListener('click', alertBox);
 </script>

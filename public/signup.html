@@ -25,5 +25,35 @@
       <div class="centered">Sign-Up Form</div>
     </div>
 
+    <br>
+    <br>
+
+    <div class="form">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your first name">
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Your phone number without dashes (Ex. 1234567890)">
+        <br>
+
+        <label for="specRequest">Special Notes</label>
+        <input type="text" id="specRequest" name="specRequest" placeholder="Describe any special circumstances (Ex. I am often in meetings)">
+
+        <input type="checkbox" id="lgbtqia" name="lgbtqia" value="Ally">
+        <label for="lgbtqia"> I am an ally or member of the LGBTQIA+ community. (All Inclusive)</label>
+        <br>
+        <br>
+
+        <button id="joinButton">Sign Up to be a Period Pal!</button>
+    </div>
+
 </div>
 </html>
+
+<script>
+function alertBox() {
+    alert("Thank you for signing up to be a period pal! We appreciate your support for women around you!");
+}
+
+document.querySelector('#joinButton').addEventListener('click', alertBox);
+</script>
