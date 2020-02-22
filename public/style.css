@@ -114,3 +114,17 @@ h1 {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
+.genAbout {
+    margin-left: 3vw;
+    margin-right: 5vw;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+}
+
+.aboutimg1 {
+    float: left;
+    margin-left: 5vw;
+    margin-right: 2vw;
+    margin-bottom: 3vw;
+    margin-top: 1vw;
+}
