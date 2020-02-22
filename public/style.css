@@ -20,8 +20,6 @@ p2 {
   margin-bottom: 2vw;
 }
 
-
-
 .link {
     text-decoration: none;
     color: #5692ef;
@@ -82,10 +80,16 @@ h1 {
   font-size: 75px;
   font-size: 5vw;
   color: black;
+  font-family: 'Glass Antiqua';
 }
 
 .headerImage {
     opacity: .3;
+}
+
+#padRequestButton {
+  font-size: 1vw;
+  font-family: Times New Roman;
 }
 
 /* Style the button that is used to open and close the collapsible content */
