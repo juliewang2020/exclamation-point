@@ -21,6 +21,7 @@
     "@bandwidth/messaging": "^1.0.1",
     "asyncawait": "^3.0.0",
     "express": "^4.17.1",
+    "node-bandwidth": "^3.0.3",
     "path": "^0.12.7"
   }
 }

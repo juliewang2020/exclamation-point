@@ -2,21 +2,26 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-const BandwidthMessaging = require('@bandwidth/messaging');
-BandwidthMessaging.Configuration.basicAuthUserName = "pearlhacks6@bandwidth.com";
-BandwidthMessaging.Configuration.basicAuthPassword = "3uWM6xVZqeNCV2Ns";
-const messagingController = BandwidthMessaging.APIController;
-const applicationId = "";
-
-var body = new BandwidthMessaging.MessageRequest({
-    "applicationId" : applicationId ,
-    "to"            : ["+16789517861"],
-    "from"          : "+19193385629",
-    "text"          : "hello"
+const Bandwidth = require('node-bandwidth');
+var client = new Bandwidth({
+	userId    : "u-7imsptfpg3nagvxl5fdvfky", // <-- note, this is not the same as the username you used to login to the portal
+	apiToken  : "t-ep3pkbuf4kp7i65ligizjby",
+	apiSecret : "pqqflfggm62xbi245zz2xxwdthul36zuygcgo2y"
 });
 
-var response = messagingController.createMessage(msgUserId, body);
-console.log(response);
+function textAlert(){
+  client.Message.send({
+    from : "+19193385629", // This must be a Catapult number on your account
+    to   : "+14045104491",
+    text : "pee pee poo poo"
+  })
+  .then(function(message) {
+    console.log("Message sent with ID " + message.id);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+}
 
 app.use(express.static('public'))
 
