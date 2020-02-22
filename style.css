@@ -1,0 +1,61 @@
+.imgme {
+    display: block;
+    margin: auto;
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+}
+
+p1 {
+    font-size: 2vw;
+    font-weight: bolder;
+}
+
+.link {
+    text-decoration: none;
+    color: #5692ef;
+}
+
+.text {
+    margin: auto;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+h1 {
+    text-align: center;
+    font-family: Georgia;
+    font-weight: lighter;
+    font-size: 2.5vw;
+}
+
+.button {
+    background-color: #ffffff;
+    border: none;
+    color: black;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Georgia;
+    float:right;
+    font-size: 1.5vw;
+}
+
+.button:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    display: inline-block;
+    width: 5.5vw;
+    height:auto;
+    padding: .5vw;
+}
+
+
+
+
+
+
+
