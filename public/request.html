@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<title>Request Products</title>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" href="about.png">
+</head>
+
+<!--div "resizeable" makes the content resize with screen size-->
+<div class="resizeable">
+<!--Sets up buttons at the top of the screen-->
+<a href="resources.html"><button class="button">Resources</button></a>
+<a href="qa.html"><button class="button">FAQ</button></a>
+<a href="request.html"><button class="button">Request</button></a>
+<a href="home.html"><button class="button">Home</button></a>
+<br>
+<br>
+
+<!--div add container for header image and text that floats over header image-->
+<div class="container">
+  <img src="aboutHeader.png" alt="aboutHeader" class="headerImage" style="width:100%;">
+  <div class="centered">Request Products</div>
+</div>
+
+<br>
+<br>
+
+<div class="form">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your first name">
+
+    <label>Select Your Preferred Product</label>
+    <br>
+    <input type="radio" id="tampon" name="type" value="tampon">
+    <label for="tampon">Tampon</label><br>
+    <input type="radio" id="pad" name="type" value="pad">
+    <label for="pad">Pad</label><br>
+    <input type="radio" id="other" name="type" value="other">
+    <label for="other">Either Pad or Tampon</label>
+    <br>
+
+    <br>
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" placeholder="Describe your current location">
+
+    <label for="specRequest">Special Requests</label>
+    <input type="text" id="specRequest" name="specRequest" placeholder="Describe anything else you may need">
+
+    <button id="padRequestButton">Find a Period Pal!</button>
+</div>
+
+</div>
+</html>
+
+
+
+<script>
+function geoFindMe() {
+
+  function success(position) {
+    var request = true;
+
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    const fname = document.getElementById("fname").value;
+
+    const location = document.getElementById("location").value;
+
+    const specialRequest = document.getElementById("specRequest").value;
+
+    var typeOfProduct = "";
+
+    print()
+
+    if (document.getElementById("tampon").checked) {
+        typeOfProduct = "Tampon";
+    } else if (document.getElementById("pad").checked) {
+        typeOfProduct = "Pad";
+    } else {
+        typeOfProduct = "Either Pad or Tampon";
+    }
+
+    console.log(latitude);
+    console.log(longitude);
+    console.log(fname);
+    console.log(location);
+    console.log(specialRequest);
+    console.log(typeOfProduct);
+
+    document.querySelector('#padRequestButton').addEventListener('click', geoFindMe);
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating…';
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+}
+
+document.querySelector('#padRequestButton').addEventListener('click', geoFindMe);
+</script>
