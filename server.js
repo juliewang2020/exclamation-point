@@ -100,7 +100,7 @@ app.post('/', function(req, res) {
   textAlert(mes);
   console.log("sent message");
   res.sendStatus(200);
-  setTimeout(textCathy(location),300000);
+  var myVar = setTimeout(function() { textCathy(location) },300000);
 });
 
 function textCathy(location){
