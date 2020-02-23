@@ -2,12 +2,17 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+
+app.use(express.static('public'))
+
 const Bandwidth = require('node-bandwidth');
 var client = new Bandwidth({
 	userId    : "u-7imsptfpg3nagvxl5fdvfky", // <-- note, this is not the same as the username you used to login to the portal
 	apiToken  : "t-ep3pkbuf4kp7i65ligizjby",
 	apiSecret : "pqqflfggm62xbi245zz2xxwdthul36zuygcgo2y"
 });
+
+document.getElementById("padRequestButton").addEventListener("click", textAlert());
 
 function textAlert(){
   client.Message.send({
@@ -22,8 +27,6 @@ function textAlert(){
     console.log(err.message);
   });
 }
-
-app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/home.html'));
