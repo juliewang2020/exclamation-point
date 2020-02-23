@@ -9,6 +9,8 @@
 p {
   margin-top: 1vw;
   font-size: 1.25vw;
+  font-family: Open Sans;
+  text-align: center;
 }
 
 p1 {
@@ -33,7 +35,7 @@ p2 {
 
 h1 {
     text-align: center;
-    font-family: Courier New;
+    font-family: Open Sans;
     font-weight: lighter;
     font-size: 2.5vw;
 }
@@ -84,7 +86,7 @@ h1 {
 }
 
 .headerImage {
-    opacity: .3;
+    opacity: .4;
 }
 
 #padRequestButton {
@@ -139,7 +141,6 @@ h1 {
     margin-left: 3vw;
     margin-right: 5vw;
     margin-bottom: 3vw;
-    margin-top: 3vw;
 }
 
 .aboutimg1 {
@@ -150,6 +151,18 @@ h1 {
     margin-top: 1vw;
 }
 
+.aboutimg2 {
+    float: right;
+    margin-left: 2vw;
+    margin-right: 5vw;
+    margin-bottom: 3vw;
+    margin-top: 1vw;
+}
+
+.genAboutLeft {
+    margin-left: 5vw;
+    margin-right: 3vw;
+}
 
 /*Resources Page List Formatting*/
 .list {
