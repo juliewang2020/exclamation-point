@@ -89,6 +89,7 @@ app.get('/homeHeader.png', function(req, res) {
   res.sendFile(__dirname + "/public/homeHeader.png");
 });
 var myVar;
+var flag = true;
 app.post('/', function(req, res) {
   console.log(req);
   var name = req.body.name;
@@ -97,7 +98,10 @@ app.post('/', function(req, res) {
   var location = req.body.location;
   var specRequest = req.body.specRequest;
   var mes = "Hey Period Pals! " + name + " needs a " + item + "!";
-  textAlert(mes);
+  if (flag) {
+    textAlert(mes);
+    flag = false;
+  }
   console.log("sent message");
   res.sendStatus(200);
   myVar = setTimeout(function() { textCathy(location) },30000);
