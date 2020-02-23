@@ -57,17 +57,17 @@ function textAlert(mes){
   .catch(function(err) {
     console.log(err.message);
   });
-  client.Message.send({
-    from : "+19193385629", // This must be a Catapult number on your account
-    to   : "+16789517861",
-    text : mes
-  })
-  .then(function(message) {
-    console.log("Message sent with ID " + message.id);
-  })
-  .catch(function(err) {
-    console.log(err.message);
-  });
+  // client.Message.send({
+  //   from : "+19193385629", // This must be a Catapult number on your account
+  //   to   : "+16789517861",
+  //   text : mes
+  // })
+  // .then(function(message) {
+  //   console.log("Message sent with ID " + message.id);
+  // })
+  // .catch(function(err) {
+  //   console.log(err.message);
+  // });
 }
 
 
