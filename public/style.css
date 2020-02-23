@@ -48,14 +48,15 @@ h1 {
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    font-family: Georgia;
-    float:right;
-    font-size: 1.5vw;
+    font-family: Arial;
+    float: right;
+    font-size: 1.25vw;
 }
 
 
 .button:hover {
-    text-decoration: underline;
+    background-color: rgb(243, 193, 232);
+    color: black;
 }
 
 .icon {
