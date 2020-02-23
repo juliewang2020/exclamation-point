@@ -114,7 +114,7 @@ function textCathy(location){
   client.Message.send({
     from : "+19193385629", // This must be a Catapult number on your account
     to   : "+14049604404",
-    text : "Thanks for your help! Your Period Pal is waiting for you at " + location + ". https://maps.google.com/?q=" + latitude + "," + longitude;
+    text : "Thanks for your help! Your Period Pal is waiting for you at " + location + ". https://maps.google.com/?q=" + latitude + "," + longitude
   })
   .then(function(message) {
     console.log("Message sent with ID " + message.id);
