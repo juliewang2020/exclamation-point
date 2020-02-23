@@ -92,6 +92,11 @@ h1 {
   font-family: Times New Roman;
 }
 
+#joinButton {
+  font-size: 1vw;
+  font-family: Times New Roman;
+}
+
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
   background-color: #eee;
