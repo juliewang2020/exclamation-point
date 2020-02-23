@@ -81,6 +81,7 @@ app.get('/homeHeader.png', function(req, res) {
 });
 
 app.post('/', function(req, res) {
+  console.log(req.body);
   // var name = req.body.name;
   // var item = req.body.item;
   // var phone = req.body.phone;
