@@ -101,6 +101,7 @@ app.post('/', function(req, res) {
   console.log("sent message");
   res.sendStatus(200);
   myVar = setTimeout(function() { textCathy(location) },30000);
+  clearTimeout(myVar);
 });
 
 function textCathy(location){
@@ -115,6 +116,6 @@ function textCathy(location){
   .catch(function(err) {
     console.log(err.message);
   });
-  clearTimeout(myVar);
+  
 }
 
