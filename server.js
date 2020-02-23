@@ -87,7 +87,7 @@ app.post('/', function(req, res) {
   // var location = req.body.location;
   // var specRequest = req.body.specRequest;
   var mes = "Hey Period Pals! ";
-  textAlert(mes);
+  textAlert(req.body);
   console.log("sent message");
 });
 
