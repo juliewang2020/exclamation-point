@@ -67,6 +67,16 @@ function textAlert(mes){
   });
 }
 
+app.configure(function(){
+  app.use(express.bodyParser());
+  app.use(app.router);
+});
+
+// Listen to the App Engine-specified port, or 8080 otherwise
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}...`);
+});
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/home.html'));
@@ -93,8 +103,3 @@ app.post('/', function(req, res) {
   res.sendStatus(200);
 });
 
-// Listen to the App Engine-specified port, or 8080 otherwise
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}...`);
-});
