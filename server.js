@@ -99,13 +99,14 @@ app.post('/', function(req, res) {
   var latitude = req.body.latitude;
   var longitude = req.body.longitude;
   var mes = "Hey Period Pals! " + name + " needs a " + item + "! Please reply with Yes if you'd like to help.";
-  if(specRequest==""){
-    textAlert(mes);
-  }else{
-    mes="Hey Period Pals! " + name + " needs a " + item + "! Her special request is: \"" + specRequest + "\". Please reply with \"YES\" if you'd like to help.";
-    textAlert(mes)
+  if (name != undefined){
+    if(specRequest==""){
+      textAlert(mes);
+    }else{
+      mes="Hey Period Pals! " + name + " needs a " + item + "! Her special request is: \"" + specRequest + "\". Please reply with \"YES\" if you'd like to help.";
+      textAlert(mes)
+    }
   }
-
   console.log("sent message");
   res.sendStatus(200);
   myVar = setTimeout(function() { textCathy(req.body) },30000);
