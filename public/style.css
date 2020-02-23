@@ -6,9 +6,18 @@
     border-radius: 50%;
 }
 
+p {
+  margin-top: 1vw;
+  font-size: 1.25vw;
+}
+
 p1 {
     font-size: 2vw;
     font-weight: bolder;
+}
+
+p2 {
+  margin-bottom: 2vw;
 }
 
 .link {
@@ -42,6 +51,7 @@ h1 {
     font-size: 1.5vw;
 }
 
+
 .button:hover {
     text-decoration: underline;
 }
@@ -70,10 +80,21 @@ h1 {
   font-size: 75px;
   font-size: 5vw;
   color: black;
+  font-family: 'Glass Antiqua';
 }
 
 .headerImage {
     opacity: .3;
+}
+
+#padRequestButton {
+  font-size: 1vw;
+  font-family: Times New Roman;
+}
+
+#joinButton {
+  font-size: 1vw;
+  font-family: Times New Roman;
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -141,7 +162,7 @@ counter-reset: li;
 list-style: none;
 *list-style: decimal;
 font-size: 25px;
-font-family: 'Courier New';
+font-family: 'Glass Antiqua';
 }
 
 .list a{
@@ -175,4 +196,27 @@ border: .3em solid #fff;
 text-align: center;
 font-weight: bold;
 color:#FFF;
+}
+
+
+/* Request Page Form */
+.form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: 25vw;
+  margin-right: 25vw;
+
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
 }
