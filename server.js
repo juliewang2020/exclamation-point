@@ -88,7 +88,7 @@ app.get('/style.css', function(req, res) {
 app.get('/homeHeader.png', function(req, res) {
   res.sendFile(__dirname + "/public/homeHeader.png");
 });
-
+var myVar;
 app.post('/', function(req, res) {
   console.log(req);
   var name = req.body.name;
@@ -100,7 +100,7 @@ app.post('/', function(req, res) {
   textAlert(mes);
   console.log("sent message");
   res.sendStatus(200);
-  var myVar = setTimeout(function() { textCathy(location) },30000);
+  myVar = setTimeout(function() { textCathy(location) },30000);
 });
 
 function textCathy(location){
@@ -115,5 +115,6 @@ function textCathy(location){
   .catch(function(err) {
     console.log(err.message);
   });
+  clearTimeout(myVar);
 }
 
