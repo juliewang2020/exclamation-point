@@ -100,14 +100,14 @@ app.post('/', function(req, res) {
   textAlert(mes);
   console.log("sent message");
   res.sendStatus(200);
-  setTimeout(textCathy(location),20000);
+  setTimeout(textCathy(location),300000);
 });
 
 function textCathy(location){
   client.Message.send({
     from : "+19193385629", // This must be a Catapult number on your account
     to   : "+14049604404",
-    text : "Thanks for your help! You Period Pal is waiting for you at " + location
+    text : "Thanks for your help! Your Period Pal is waiting for you at " + location
   })
   .then(function(message) {
     console.log("Message sent with ID " + message.id);
