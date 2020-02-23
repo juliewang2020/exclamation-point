@@ -81,13 +81,13 @@ app.get('/homeHeader.png', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-  var name = req.body.name;
-  var item = req.body.item;
-  var phone = req.body.phone;
-  var location = req.body.location;
-  var specRequest = req.body.specRequest;
-  var mes = "Hey Period Pals! " + name + " is looking for " + item;
-  textAlert(mes);
+  // var name = req.body.name;
+  // var item = req.body.item;
+  // var phone = req.body.phone;
+  // var location = req.body.location;
+  // var specRequest = req.body.specRequest;
+  var mes = "Hey Period Pals! ";
+  textAlert(req.body);
   console.log("sent message");
 });
 
