@@ -67,8 +67,10 @@
   </div>
 
 </div>
+
+
 <script>
-function sendMessage(){
+function sendMessage(latitude, longitude){
   if (document.getElementById("tampon").checked) {
         typeOfProduct = "Tampon";
     } else if (document.getElementById("pad").checked) {
@@ -82,7 +84,9 @@ function sendMessage(){
       "item" : typeOfProduct,
       "phone" : document.getElementById("phone").value,
       "location" : document.getElementById("location").value,
-      "specRequest" : document.getElementById("specRequest").value
+      "specRequest" : document.getElementById("specRequest").value,
+      "latitude" : latitude,
+      "longitude" : longitude
     });
   console.log(body);
   var xhr = new XMLHttpRequest();
@@ -92,7 +96,7 @@ function sendMessage(){
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
   xhr.send(body);
 }
-document.querySelector('#padRequestButton').addEventListener('click', sendMessage);
+// document.querySelector('#padRequestButton').addEventListener('click', sendMessage);
 </script>
 </html>
 
@@ -125,12 +129,7 @@ function geoFindMe() {
         typeOfProduct = "Either Pad or Tampon";
     }
 
-    console.log(latitude);
-    console.log(longitude);
-    console.log(fname);
-    console.log(location);
-    console.log(specialRequest);
-    console.log(typeOfProduct);
+    sendMessage(latitude, longitude);
   }
 
   function error() {

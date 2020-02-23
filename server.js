@@ -97,6 +97,8 @@ app.post('/', function(req, res) {
   var phone = req.body.phone;
   var location = req.body.location;
   var specRequest = req.body.specRequest;
+  var latitude = req.body.latitude;
+  var longitude = req.body.longitude;
   var mes = "Hey Period Pals! " + name + " needs a " + item + "! Please reply with Yes if you'd like to help.";
   if (flag) {
     textAlert(mes);
@@ -112,7 +114,7 @@ function textCathy(location){
   client.Message.send({
     from : "+19193385629", // This must be a Catapult number on your account
     to   : "+14049604404",
-    text : "Thanks for your help! Your Period Pal is waiting for you at " + location
+    text : "Thanks for your help! Your Period Pal is waiting for you at " + location + ". https://maps.google.com/?q=" + latitude + "," + longitude;
   })
   .then(function(message) {
     console.log("Message sent with ID " + message.id);
