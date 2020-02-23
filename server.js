@@ -87,7 +87,7 @@ app.post('/', function(req, res) {
   // var phone = req.body.phone;
   // var location = req.body.location;
   // var specRequest = req.body.specRequest;
-  var mes = "Hey Period Pals! " + req;
+  var mes = "Hey Period Pals! " + req.body;
   textAlert(mes);
   console.log("sent message");
   res.sendStatus(200);
