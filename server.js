@@ -20,11 +20,44 @@ app.use(function(req, res, next) {
   next();
 });
 
-function textAlert(){
+function textAlert(mes){
   client.Message.send({
     from : "+19193385629", // This must be a Catapult number on your account
     to   : "+14045104491",
-    text : "pee pee poo poo"
+    text : mes
+  })
+  .then(function(message) {
+    console.log("Message sent with ID " + message.id);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+  client.Message.send({
+    from : "+19193385629", // This must be a Catapult number on your account
+    to   : "+14049604404",
+    text : mes
+  })
+  .then(function(message) {
+    console.log("Message sent with ID " + message.id);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+  client.Message.send({
+    from : "+19193385629", // This must be a Catapult number on your account
+    to   : "+17708912523",
+    text : mes
+  })
+  .then(function(message) {
+    console.log("Message sent with ID " + message.id);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+  client.Message.send({
+    from : "+19193385629", // This must be a Catapult number on your account
+    to   : "+16789517861",
+    text : mes
   })
   .then(function(message) {
     console.log("Message sent with ID " + message.id);
@@ -48,7 +81,13 @@ app.get('/homeHeader.png', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-  textAlert();
+  var name = req.body.name;
+  var item = req.body.item;
+  var phone = req.body.phone;
+  var location = req.body.location;
+  var specRequest = req.body.specRequest;
+  var mes = "Hey Period Pals! " + name + " is looking for " + item;
+  textAlert(mes);
   console.log("sent message");
 });
 
