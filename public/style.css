@@ -91,12 +91,12 @@ h1 {
 
 #padRequestButton {
   font-size: 1vw;
-  font-family: Times New Roman;
+  font-family: Open Sans;
 }
 
 #joinButton {
   font-size: 1vw;
-  font-family: Times New Roman;
+  font-family: Open Sans;
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -219,6 +219,7 @@ color:#FFF;
   padding: 20px;
   margin-left: 25vw;
   margin-right: 25vw;
+  font-family: Open Sans;
 
 }
 
@@ -232,4 +233,13 @@ input[type=text], select, textarea {
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
   resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Footer Formatting */
+.footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: black;
+   text-align: center;
 }
