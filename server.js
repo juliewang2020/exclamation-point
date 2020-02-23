@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-
-app.use(express.static('public'))
-
+var http = require('http');
+// TODO initialize bandwidth API here (including credentials)
 const Bandwidth = require('node-bandwidth');
 var client = new Bandwidth({
 	userId    : "u-7imsptfpg3nagvxl5fdvfky", // <-- note, this is not the same as the username you used to login to the portal
@@ -12,7 +11,14 @@ var client = new Bandwidth({
 	apiSecret : "pqqflfggm62xbi245zz2xxwdthul36zuygcgo2y"
 });
 
-document.getElementById("padRequestButton").addEventListener("click", textAlert());
+app.use(express.static('public'))
+
+//CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
+});
 
 function textAlert(){
   client.Message.send({
@@ -28,6 +34,7 @@ function textAlert(){
   });
 }
 
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/home.html'));
 });
@@ -38,6 +45,11 @@ app.get('/style.css', function(req, res) {
 
 app.get('/homeHeader.png', function(req, res) {
   res.sendFile(__dirname + "/public/homeHeader.png");
+});
+
+app.post('/', function(req, res) {
+  textAlert();
+  console.log("sent message");
 });
 
 // Listen to the App Engine-specified port, or 8080 otherwise
