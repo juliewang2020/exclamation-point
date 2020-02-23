@@ -89,7 +89,6 @@ app.get('/homeHeader.png', function(req, res) {
   res.sendFile(__dirname + "/public/homeHeader.png");
 });
 var myVar;
-var flag = true;
 app.post('/', function(req, res) {
   console.log(req);
   var name = req.body.name;
@@ -100,10 +99,7 @@ app.post('/', function(req, res) {
   var latitude = req.body.latitude;
   var longitude = req.body.longitude;
   var mes = "Hey Period Pals! " + name + " needs a " + item + "! Please reply with Yes if you'd like to help.";
-  if (flag) {
-    textAlert(mes);
-    flag = false;
-  }
+  textAlert(mes);
   console.log("sent message");
   res.sendStatus(200);
   myVar = setTimeout(function() { textCathy(location, latitude, longitude) },30000);
