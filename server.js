@@ -87,9 +87,10 @@ app.post('/', function(req, res) {
   // var phone = req.body.phone;
   // var location = req.body.location;
   // var specRequest = req.body.specRequest;
-  var mes = "Hey Period Pals! ";
+  var mes = "Hey Period Pals! " + req;
   textAlert(mes);
   console.log("sent message");
+  res.sendStatus(200);
 });
 
 // Listen to the App Engine-specified port, or 8080 otherwise
