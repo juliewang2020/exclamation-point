@@ -102,15 +102,26 @@ app.post('/', function(req, res) {
   textAlert(mes);
   console.log("sent message");
   res.sendStatus(200);
-  myVar = setTimeout(function() { textCathy(location, latitude, longitude) },30000);
+  myVar = setTimeout(function() { textCathy(req.body) },30000);
   
 });
 
-function textCathy(location, latitude, longitude){
+function textCathy(body){
   client.Message.send({
     from : "+19193385629", // This must be a Catapult number on your account
     to   : "+14049604404",
-    text : "Thanks for your help! Your Period Pal is waiting for you at " + location + ". https://maps.google.com/?q=" + latitude + "," + longitude
+    text : "Thanks for your help! Your Period Pal is waiting for you at " + body.location + ". https://maps.google.com/?q=" + body.latitude + "," + body.longitude
+  })
+  .then(function(message) {
+    console.log("Message sent with ID " + message.id);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  });
+  client.Message.send({
+    from : "+19193385629", // This must be a Catapult number on your account
+    to   : "+1" + body.phone,
+    text : "Thank you for your request! Your Period Pal Cathy is on the way!"
   })
   .then(function(message) {
     console.log("Message sent with ID " + message.id);
