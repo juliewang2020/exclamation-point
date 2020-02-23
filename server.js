@@ -106,11 +106,11 @@ app.post('/', function(req, res) {
   }
   console.log("sent message");
   res.sendStatus(200);
-  myVar = setTimeout(function() { textCathy(location) },30000);
+  myVar = setTimeout(function() { textCathy(location, latitude, longitude) },30000);
   
 });
 
-function textCathy(location){
+function textCathy(location, latitude, longitude){
   client.Message.send({
     from : "+19193385629", // This must be a Catapult number on your account
     to   : "+14049604404",
