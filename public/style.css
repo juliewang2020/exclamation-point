@@ -55,7 +55,7 @@ h1 {
 
 
 .button:hover {
-    background-color: rgb(243, 193, 232);
+    background-color: rgb(245, 223, 234);
     color: black;
 }
 
@@ -114,18 +114,32 @@ h1 {
 
 
 #padRequestButton {
-  font-size: 1vw;
+  font-size: 1.25vw;
+  border: none;
   font-family: Open Sans;
+  background-color: rgb(238, 180, 220);
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  width: 50%;
+  align-self: center;
 }
 
 #joinButton {
-  font-size: 1vw;
+  font-size: 1.25vw;
+  border: none;
   font-family: Open Sans;
+  background-color: rgb(238, 180, 220);
+  padding: 16px;
+  text-decoration: none;
+  display: inline-block;
+  width: 50%;
+  align-self: center;
 }
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
+  background-color: rgb(255, 244, 245);
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -134,11 +148,12 @@ h1 {
   text-align: left;
   outline: none;
   font-size: 15px;
+  font-family: Open Sans;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #ccc;
+  background-color: rgb(226, 180, 184);
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -146,7 +161,8 @@ h1 {
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: rgb(255, 244, 245);
+  font-family: Open Sans;
 }
 
 .collapsible:after {
@@ -224,12 +240,13 @@ color:#FFF;
 /* Request Page Form */
 .form {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color:  rgb(245, 223, 234);
   padding: 20px;
   margin-left: 25vw;
   margin-right: 25vw;
   font-family: Open Sans;
-
+  display: flex;
+  flex-direction: column;
 }
 
 /* Style inputs with type="text", select elements and textareas */
