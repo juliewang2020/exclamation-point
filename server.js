@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-
+var bodyParser = require('body-parser')
 var http = require('http');
 // TODO initialize bandwidth API here (including credentials)
 const Bandwidth = require('node-bandwidth');
@@ -10,7 +10,10 @@ var client = new Bandwidth({
 	apiToken  : "t-ep3pkbuf4kp7i65ligizjby",
 	apiSecret : "pqqflfggm62xbi245zz2xxwdthul36zuygcgo2y"
 });
+app.use(bodyParser.urlencoded({ extended: false }))
 
+// parse application/json
+app.use(bodyParser.json())
 app.use(express.static('public'))
 
 //CORS
@@ -67,10 +70,6 @@ function textAlert(mes){
   });
 }
 
-app.configure(function(){
-  app.use(express.bodyParser());
-  app.use(app.router);
-});
 
 // Listen to the App Engine-specified port, or 8080 otherwise
 const PORT = process.env.PORT || 8080;
