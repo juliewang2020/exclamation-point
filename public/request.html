@@ -21,7 +21,7 @@
 
 <!--div add container for header image and text that floats over header image-->
 <div class="container">
-  <img src="aboutHeader.png" alt="aboutHeader" class="headerImage" style="width:1423px;height:433px">
+  <img src="aboutHeader.png" alt="aboutHeader" class="headerImage" style="width:100%;">
   <div class="centered">Request Form</div>
 </div>
 
@@ -64,12 +64,28 @@
 </div>
 <script>
 function sendMessage(){
+  if (document.getElementById("tampon").checked) {
+        typeOfProduct = "Tampon";
+    } else if (document.getElementById("pad").checked) {
+        typeOfProduct = "Pad";
+    } else {
+        typeOfProduct = "Either Pad or Tampon";
+    }
+
+  var body = JSON.stringify({
+      "name" : document.getElementById("fname").value,
+      "item" : typeOfProduct,
+      "phone" : document.getElementById("phone").value,
+      "location" : document.getElementById("location").value,
+      "specRequest" : document.getElementById("specRequest").value
+    });
+  console.log(body);
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://exclamation-point-pearlhacks.appspot.com/", true);
+  xhr.open("POST", "https://periodpal-pearlhacks2020.appspot.com/", true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-  xhr.send();
+  xhr.send(body);
 }
 document.querySelector('#padRequestButton').addEventListener('click', sendMessage);
 </script>
