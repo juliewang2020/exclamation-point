@@ -56,7 +56,17 @@
 </div>
 
 </div>
-<script src="../server.js"></script>
+<script>
+function sendMessage(){
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://exclamation-point-pearlhacks.appspot.com/", true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
+  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+  xhr.send();
+}
+document.querySelector('#padRequestButton').addEventListener('click', sendMessage);
+</script>
 </html>
 
 
