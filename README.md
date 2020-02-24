@@ -12,6 +12,8 @@ Period Pal connects those in need for menstrual hygiene products (for those expe
 ## How we built it
 Our website is hosted using Google Cloud's App Engine. We used Radar.io to detect the user's location to help find nearby period pals. The Bandwidth API was used to send text messages to these nearby period pals to request for help.
 
+## Visit the Website
+https://periodpal-pearlhacks2020.appspot.com/home.html
 
 This project was built for Pearl Hacks2020.
 - Twitter's Hack that Best Supports the Idea that Change has to Begin with the People
