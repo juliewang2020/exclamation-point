@@ -1,6 +1,6 @@
 
 # Period Pal
-Period Pal (formerly known as Exclamation Point) connects those in need for menstrual hygiene products (for those experiencing period poverty or are caught off guard).
+Period Pal (formerly known as Exclamation Point) connects those in need for menstrual hygiene products (for those experiencing period poverty or are caught off guard) to others who are willing to share.
 
 
 ## Inspiration
